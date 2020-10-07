@@ -1,13 +1,126 @@
 {% extends 'frontend/base.html' %}
 {% block title %} Contact {% endblock %}
 {% block content %}
-<div class="jumbotron"> 
-    <h1 class="display-3">Contact page</h1>
-    <p class="lead">Jumbo helper text</p>
-    <hr class="my-2">
-    <p>More info</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+  <style>
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blueviolet;
+
+            border-bottom: 16px solid deepskyblue;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+
+        #HEAD
+        {
+            position: fixed;
+            font-size: 6vw;
+            font-family: "Helvetica";
+            font-weight: bold;
+            /*top: 2vw;*/
+            left: 34vw;
+            color: #7899cb;
+        }
+        #name
+        {
+
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 4px;
+            box-sizing: border-box;
+            border:none;
+
+
+        }
+
+        #email
+        {
+
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 4px;
+            box-sizing: border-box;
+            border:none;
+
+        }
+        #form
+        {
+            border-radius: 4px;
+            width: 60%;
+            position:fixed;
+            left: 20vw;
+            top: 12vw;
+        }
+        textarea {
+            width: 60%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+        .button {
+            left: 45vw;
+            position: fixed;
+
+            border-radius: 3vw ;
+            font-size: 2vw ;
+            border: none;
+            transition-duration: 0.3s;
+
+            background-color: white;
+            color: darkslateblue;
+        }
+        .buttonHover:hover {
+            background:darkslateblue;
+            color:white;
+            border: 0.1px solid darkslateblue;
+        }
+
+
+    </style>
+<div class="jumbotron-fluid"> 
+   <div id = "HEAD"> Contact Me</div>
+    <form  action="mailto:61011060@kmitl.ac.th" method="post" enctype="text/plain" id = form style="text-align: center ; background-color: lightblue">
+        <br>
+        <input type="text"  name ="name" id="name" placeholder="Your Name..."><br>
+        <input type="text" name ="mail" id="email" placeholder="Your Email..."><br>
+        <textarea type="text" name ="message" placeholder="Message..."></textarea><br><br>
+        <button  type = "submit" class ="button buttonHover">SUBMIT</button>
+
+        <br><br><br>
+    </form>
     </p>
 </div>
 {% endblock %}
